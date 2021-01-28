@@ -3,23 +3,31 @@ import React from 'react';
 class HelloWorld extends React.Component {
     state = {
         who: 'world'
-    }
-     handleClick = (e) => {
-         this.setState({
-             who: e.target.innerText
-         })
-     }
-
-    render(){
-        return(
-            <div>
-                <p>Hello {this.state.who}</p>
-                <button onClick={(e) => this.handleClick(e)}>World</button>
-                <button onClick={(e) => this.handleClick(e)}>Friend</button>
-                <button onClick={(e) => this.handleClick(e)}>React</button>
-            </div>
+    };
+    render() {
+        return (
+          <div className='HelloWorld'>
+            <p>Hello, {this.state.who}!</p>
+            <button
+              onClick={() => this.setState({ who: 'world' })}
+            >
+              World
+            </button>
+            <br/>
+            <button
+              onClick={() => this.setState({ who: 'friend' })}
+            >
+              Friend
+            </button>
+            <br />
+            <button
+              onClick={() => this.setState({ who: 'React' })}
+            >
+              React
+            </button>
+          </div>
         )
+      }
     }
-}
 
 export default HelloWorld
